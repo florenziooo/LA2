@@ -13,7 +13,7 @@ public class Manager extends Employee {
      */
     public void giveRaise(Employee e, double raise) throws IllegalArgumentException {
         if (raise < 0) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Raise must be non-negative.");
         }
 
 
@@ -21,8 +21,7 @@ public class Manager extends Employee {
             e.setSalary(e.getSalary() + raise);
         } else {
             e.setSalary(e.getSalary() + raise);
-            double newSalary = e.getSalary();
-            this.setSalary(this.getSalary() + (newSalary / 2.0));
+            this.setSalary(this.getSalary() + (raise / 2.0));
         }
 
     }
